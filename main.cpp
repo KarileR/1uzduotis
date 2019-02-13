@@ -8,27 +8,57 @@ int main()
     std::cout<<"Iveskite savo varda: "<<std::endl;
     std::cin>>vardas;
 
-    std::string TreciaEil;
+    std::cout<<"Iveskite remelio ploti: "<<std::endl;
+    int a;
+    std::cin>>a;
+
+    std::string VidEil;
 
     if (vardas.back() == 's')
     {
-        TreciaEil = "* Sveikas, " + vardas + "! *";
+        VidEil = "Sveikas, " + vardas + "!";
     }
     else
     {
-        TreciaEil = "* Sveika, " + vardas + "! *";
+        VidEil = "Sveika, " + vardas + "!";
     }
 
-    std::string tarpas(TreciaEil.size() - 4, ' ');
-    std::string AntraEil = "* " + tarpas + " *";
+    
+    int n = VidEil.size()+2;
+    for(int i=0; i<n+a*2; i++)
+    {  
+        std::cout<<"*";
+    }
+    std::cout<<std::endl;
 
-    std::string PirmaEil(AntraEil.size(), '*');
+    std::string tarpai(n-2, ' ');
+    std::string tarpai2(a,' ');
 
-    std::cout<<PirmaEil<<std::endl;
-    std::cout<<AntraEil<<std::endl;
-    std::cout<<TreciaEil<<std::endl;
-    std::cout<<AntraEil<<std::endl;
-    std::cout<<PirmaEil<<std::endl;
 
+    for(int i=0; i<a; i++)
+    {  
+        std::cout<<"*";
+        std::cout<<tarpai2<<tarpai2;
+        std::cout<<tarpai;
+        std::cout<<"*";
+        std::cout<<std::endl;
+    }
+
+    std::cout<<"*"<<tarpai2<<VidEil<<tarpai2<<"*"<<std::endl;
+
+    for(int i=0; i<a; i++)
+    {  
+        std::cout<<"*";
+        std::cout<<tarpai2<<tarpai2;
+        std::cout<<tarpai;
+        std::cout<<"*";
+        std::cout<<std::endl;
+    }
+
+    for(int i=0; i<n+a*2; i++)
+    {  
+        std::cout<<"*";
+    }
+    
     return 0;
 }
